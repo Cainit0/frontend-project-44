@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getRandomNum, playGame} from '../index.js';
 
-const answer = 'Answer "yes" if the number is even, otherwise answer "no".';
+const question = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const playEvenRound = () => {
     const num = getRandomNum();
@@ -22,5 +22,5 @@ const playEvenRound = () => {
 };
 
 export default () => {
-    playGame(playEvenRound, answer);
+    playGame(playEvenRound, question);
 }

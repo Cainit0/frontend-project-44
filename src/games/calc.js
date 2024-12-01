@@ -6,7 +6,7 @@ const getRandomOperation = (operations) => {
     return operations[operationNum];
 };
 
-const answer = 'What is the result of the expression?';
+const question = 'What is the result of the expression?';
 
 const playCalcRound = () => {
     const operations = [ '+', '-', '*'];
@@ -39,5 +39,5 @@ const playCalcRound = () => {
 };
 
 export default () => {
-    playGame(playCalcRound, answer);
+    playGame(playCalcRound, question);
 }

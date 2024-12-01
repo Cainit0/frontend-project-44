@@ -2,11 +2,11 @@ import readlineSync from 'readline-sync';
 
 const getRandomNum = () => Math.floor(Math.random() * 100);
 
-const playGame = (playRound, answer) => {
+const playGame = (playRound, question) => {
     console.log('Welcome to the Brain Games!');
     const name = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${name}!`);
-    console.log(answer);
+    console.log(question);
 
     for (let i = 0; i < 3; i += 1) {
         if (!playRound()) {
