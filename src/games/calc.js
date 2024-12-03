@@ -10,8 +10,8 @@ const question = 'What is the result of the expression?';
 
 const playCalcRound = () => {
     const operations = [ '+', '-', '*'];
-    const num1 = getRandomNum();
-    const num2 = getRandomNum();
+    const num1 = getRandomNum(30);
+    const num2 = getRandomNum(30);
     const operation = getRandomOperation(operations);
     let correctAnswer;
 
