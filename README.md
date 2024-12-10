@@ -13,8 +13,8 @@ https://asciinema.org/a/wm7HUd63yUO6AXgDrbP0WjOyo - аскинема устан�
 
 ## Игры
 
-Калькулятор - https://asciinema.org/a/OQyX39UxNstJh68OA6PGDkSma
-Прогрессия - https://asciinema.org/a/UZJARYPTyqREOSBk9CWKhhyqK
-Определение четного числа - https://asciinema.org/a/YyvYHOcLK2aPNUy4baHSDMOP4
-Определение НОД - https://asciinema.org/a/pc9pQj133475CDPAFzbGAfvHm
+Калькулятор - https://asciinema.org/a/OQyX39UxNstJh68OA6PGDkSma 
+Прогрессия - https://asciinema.org/a/UZJARYPTyqREOSBk9CWKhhyqK 
+Определение четного числа - https://asciinema.org/a/YyvYHOcLK2aPNUy4baHSDMOP4 
+Определение НОД - https://asciinema.org/a/pc9pQj133475CDPAFzbGAfvHm 
 Определение простого числа - https://asciinema.org/a/Wm4feuHVK5A4Fy55H4YIVigNe
