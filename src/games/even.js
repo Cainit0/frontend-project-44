@@ -1,10 +1,11 @@
 import readlineSync from 'readline-sync';
-import { getRandomNum, playGame } from '../index.js';
+import playGame from '../index.js';
+import getRandomNum from '../utils.js';
 
 const question = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const playEvenRound = () => {
-  const num = getRandomNum();
+  const num = getRandomNum(1, 100);
   const parity = num % 2;
   const correctAnswer = (parity === 0) ? 'yes' : 'no';
 

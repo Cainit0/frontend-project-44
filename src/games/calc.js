@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
-import { getRandomNum, playGame } from '../index.js';
+import playGame from '../index.js';
+import getRandomNum from '../utils.js';
 
 const getRandomOperation = (operations) => {
-  const operationNum = Math.floor(Math.random() * operations.length);
+  const operationNum = getRandomNum(0, operations.length - 1);
   return operations[operationNum];
 };
 
@@ -10,8 +11,8 @@ const question = 'What is the result of the expression?';
 
 const playCalcRound = () => {
   const operations = ['+', '-', '*'];
-  const num1 = getRandomNum(30);
-  const num2 = getRandomNum(30);
+  const num1 = getRandomNum(1, 30);
+  const num2 = getRandomNum(1, 30);
   const operation = getRandomOperation(operations);
   let correctAnswer;
 

@@ -1,11 +1,12 @@
 import readlineSync from 'readline-sync';
-import { getRandomNum, playGame } from '../index.js';
+import playGame from '../index.js';
+import getRandomNum from '../utils.js';
 
 const question = 'Find the greatest common divisor of given numbers.';
 
 const playGcdRound = () => {
-  const num1 = getRandomNum();
-  const num2 = getRandomNum();
+  const num1 = getRandomNum(1, 100);
+  const num2 = getRandomNum(1, 100);
 
   let correctAnswer = 1;
   for (let i = 2; i <= num1; i += 1) {
