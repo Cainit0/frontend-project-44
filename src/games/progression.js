@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-import playGame from '../index.js';
+import { playGame, playRound } from '../index.js';
 import getRandomNum from '../utils.js';
 
-const question = 'What number is missing in the progression?';
+const gameTask = 'What number is missing in the progression?';
 
 const playProgressionRound = () => {
   const progressionLength = getRandomNum(5, 10);
@@ -17,19 +17,10 @@ const playProgressionRound = () => {
   const correctAnswer = progression[hiddenElement];
   progression[hiddenElement] = '..';
 
-  console.log(`Question: ${progression.join(' ')}`);
-  const answer = readlineSync.question('Your answer: ');
-  const result = (answer === correctAnswer.toString());
-
-  if (result) {
-    console.log('Correct!');
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  }
-
-  return result;
+  const question = `Question: ${progression.join(' ')}`;
+  return playRound(question, correctAnswer.toString());
 };
 
 export default () => {
-  playGame(playProgressionRound, question);
+  playGame(playProgressionRound, gameTask);
 };

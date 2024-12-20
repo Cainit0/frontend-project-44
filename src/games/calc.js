@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import playGame from '../index.js';
+import { playGame, playRound } from '../index.js';
 import getRandomNum from '../utils.js';
 
 const getRandomOperation = (operations) => {
@@ -7,7 +7,7 @@ const getRandomOperation = (operations) => {
   return operations[operationNum];
 };
 
-const question = 'What is the result of the expression?';
+const gameTask = 'What is the result of the expression?';
 
 const playCalcRound = () => {
   const operations = ['+', '-', '*'];
@@ -27,18 +27,10 @@ const playCalcRound = () => {
       correctAnswer = num1 * num2;
   }
 
-  console.log(`Question: ${num1} ${operation} ${num2}`);
-  const answer = readlineSync.question('Your answer: ');
-  const result = (answer === correctAnswer.toString());
-  if (result) {
-    console.log('Correct!');
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  }
-
-  return result;
+  const question = `Question: ${num1} ${operation} ${num2}`;
+  return playRound(question, correctAnswer.toString());
 };
 
 export default () => {
-  playGame(playCalcRound, question);
+  playGame(playCalcRound, gameTask);
 };
