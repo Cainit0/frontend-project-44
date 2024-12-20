@@ -6,7 +6,8 @@ const playGame = (playRound, question) => {
   console.log(`Hello, ${name}!`);
   console.log(question);
 
-  for (let i = 0; i < 3; i += 1) {
+  const roundsNumber = 3;
+  for (let i = 0; i < roundsNumber; i += 1) {
     if (!playRound()) {
       console.log(`Let's try again, ${name}!`);
       return;
