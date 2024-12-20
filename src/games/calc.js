@@ -7,27 +7,36 @@ const getRandomOperation = (operations) => {
   return operations[operationNum];
 };
 
+const getAnswerToOperation = (number1, number2, operation) => {
+  let answer;
+
+  switch (operation) {
+    case '+':
+      answer = number1 + number2;
+      break;
+    case '-':
+      answer = number1 - number2;
+      break;
+    case '*':
+      answer = number1 * number2;
+      break;
+    default:
+      throw new Error(`Unknown operation: '${operation}'`);
+  }
+
+  return answer;
+};
+
 const gameTask = 'What is the result of the expression?';
 
 const playCalcRound = () => {
   const operations = ['+', '-', '*'];
-  const num1 = getRandomNum(1, 30);
-  const num2 = getRandomNum(1, 30);
+  const number1 = getRandomNum(1, 30);
+  const number2 = getRandomNum(1, 30);
   const operation = getRandomOperation(operations);
-  let correctAnswer;
+  const correctAnswer = getAnswerToOperation(number1, number2, operation);
 
-  switch (operation) {
-    case '+':
-      correctAnswer = num1 + num2;
-      break;
-    case '-':
-      correctAnswer = num1 - num2;
-      break;
-    default:
-      correctAnswer = num1 * num2;
-  }
-
-  const question = `Question: ${num1} ${operation} ${num2}`;
+  const question = `Question: ${number1} ${operation} ${number2}`;
   return playRound(question, correctAnswer.toString());
 };
 
