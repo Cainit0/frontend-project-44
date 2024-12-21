@@ -1,20 +1,22 @@
-import readlineSync from 'readline-sync';
 import { playGame, playRound } from '../index.js';
-import getRandomNum from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const playPrimeRound = () => {
-  const num = getRandomNum(1, 100);
-  let correctAnswer = 'yes';
-  for (let i = 2; i < num / 2; i += 1) {
-    if (num % i === 0) {
-      correctAnswer = 'no';
-      break;
+const isNumberPrime = (number) => {
+  for (let i = 2; i < number / 2; i += 1) {
+    if (number % i === 0) {
+      return false;
     }
   }
+  return true;
+};
 
-  const question = `Question: ${num}`;
+const playPrimeRound = () => {
+  const number = getRandomNumber(1, 100);
+  const correctAnswer = isNumberPrime(number) ? 'yes' : 'no';
+
+  const question = `Question: ${number}`;
   return playRound(question, correctAnswer);
 };
 
