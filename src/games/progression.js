@@ -1,28 +1,28 @@
-import { playGame, playRound } from '../index.js';
+import playGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const gameTask = 'What number is missing in the progression?';
 
-const getProgression = (progressionLength) => {
+const getProgression = (firstProgressionNumber, progressionStep, progressionLength) => {
   const result = [];
-  result[0] = getRandomNumber(1, 30);
-  const progressionStep = getRandomNumber(1, 10);
-  for (let i = 1; i < progressionLength; i += 1) {
-    result[i] = result[0] + progressionStep * i;
+  for (let i = 0; i < progressionLength; i += 1) {
+    result[i] = firstProgressionNumber + progressionStep * i;
   }
   return result;
 };
 
 const playProgressionRound = () => {
   const progressionLength = getRandomNumber(5, 10);
-  const progression = getProgression(progressionLength);
+  const progressionStep = getRandomNumber(1, 10);
+  const firstProgressionNumber = getRandomNumber(1, 30);
+  const progression = getProgression(firstProgressionNumber, progressionStep, progressionLength);
 
   const hiddenElement = getRandomNumber(0, progressionLength - 1);
-  const correctAnswer = progression[hiddenElement];
+  const correctAnswer = progression[hiddenElement].toString();
   progression[hiddenElement] = '..';
 
-  const question = `Question: ${progression.join(' ')}`;
-  return playRound(question, correctAnswer.toString());
+  const question = `${progression.join(' ')}`;
+  return { question, correctAnswer };
 };
 
 export default () => {
