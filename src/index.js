@@ -6,8 +6,8 @@ const playGame = (playGameRound, gameTask) => {
   console.log(`Hello, ${name}!`);
   console.log(gameTask);
 
-  const roundsNumber = 3;
-  for (let i = 0; i < roundsNumber; i += 1) {
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
     const { question, correctAnswer } = playGameRound();
     console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Your answer: ');

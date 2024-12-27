@@ -3,10 +3,10 @@ import getRandomNumber from '../utils.js';
 
 const gameTask = 'What number is missing in the progression?';
 
-const getProgression = (firstProgressionNumber, progressionStep, progressionLength) => {
+const getProgression = (firstNumber, step, length) => {
   const result = [];
-  for (let i = 0; i < progressionLength; i += 1) {
-    result[i] = firstProgressionNumber + progressionStep * i;
+  for (let i = 0; i < length; i += 1) {
+    result[i] = firstNumber + step * i;
   }
   return result;
 };
@@ -17,9 +17,9 @@ const playProgressionRound = () => {
   const firstProgressionNumber = getRandomNumber(1, 30);
   const progression = getProgression(firstProgressionNumber, progressionStep, progressionLength);
 
-  const hiddenElement = getRandomNumber(0, progressionLength - 1);
-  const correctAnswer = progression[hiddenElement].toString();
-  progression[hiddenElement] = '..';
+  const hiddenIndex = getRandomNumber(0, progressionLength - 1);
+  const correctAnswer = progression[hiddenIndex].toString();
+  progression[hiddenIndex] = '..';
 
   const question = `${progression.join(' ')}`;
   return { question, correctAnswer };

@@ -18,7 +18,7 @@ const isPrime = (number) => {
 const playPrimeRound = () => {
   const number = getRandomNumber(1, 100);
   const correctAnswer = isPrime(number) ? 'yes' : 'no';
-  const question = `${number}`;
+  const question = number.toString();
   return { question, correctAnswer };
 };
 

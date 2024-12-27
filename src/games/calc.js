@@ -20,8 +20,8 @@ const playCalcRound = () => {
   const operations = ['+', '-', '*'];
   const number1 = getRandomNumber(1, 30);
   const number2 = getRandomNumber(1, 30);
-  const operationNum = getRandomNumber(0, operations.length - 1);
-  const operation = operations[operationNum];
+  const operationIndex = getRandomNumber(0, operations.length - 1);
+  const operation = operations[operationIndex];
 
   const correctAnswer = calculate(number1, number2, operation).toString();
   const question = `${number1} ${operation} ${number2}`;
